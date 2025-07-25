@@ -39,3 +39,21 @@ input[type="radio"]:checked + label {
   background-color: #d6dbf5;
   border: 1px solid #d6dbf5;
 }
+
+.disabled {
+  border: 1px solid #4d5b9e;
+  color: #4d5b9e;
+  cursor: default;
+}
+
+.incorrect {
+  background-color: #f8bcbc;
+  border: 1px solid #f8bcbc;
+  cursor: default;
+}
+
+.correct {
+  background-color: #94d7a2;
+  border: 1px solid #94d7a2;
+  cursor: default;
+}

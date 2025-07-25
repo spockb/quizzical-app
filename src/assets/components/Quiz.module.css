@@ -5,7 +5,7 @@ form {
   justify-content: center;
 }
 
-div.questions {
+.questions {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -24,5 +24,29 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
+  background-color: #344f89;
+}
+
+.results {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.results span {
+  font-weight: 700;
+}
+
+button {
+  background-color: #4d5b9e;
+  color: #f5f7fb;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.75rem 3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button:hover {
   background-color: #344f89;
 }

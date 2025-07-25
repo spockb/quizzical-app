@@ -1,28 +1,47 @@
 import QuestionCard from "./QuestionCard";
-import { insertRandomly } from "../utils";
-import { decode } from "html-entities";
 import styles from "./Quiz.module.css";
 
-export default function Quiz({ quizData, onSubmit }) {
-  const QuestionsElement = quizData?.results?.map((item, index) => {
-    const allAnswers = insertRandomly(
-      item.incorrect_answers,
-      item.correct_answer
-    );
+export default function Quiz({
+  quizData,
+  onSubmit,
+  selectedAnswers,
+  isQuizSubmitted,
+  newQuiz,
+}) {
+  const correctAnswers = quizData.map((item) => item.correctAnswer);
+  const guessedCorrect =
+    isQuizSubmitted &&
+    selectedAnswers.filter((item, i) => correctAnswers[i] === item);
+  const numberCorrect = isQuizSubmitted && guessedCorrect.length;
+
+  const QuestionsElement = quizData.map((item, i) => {
     return (
       <QuestionCard
-        key={index}
-        index={index}
-        question={decode(item.question)}
-        answers={allAnswers}
+        key={i}
+        index={i}
+        question={item.question}
+        answers={item.allAnswers}
+        selectedAnswer={selectedAnswers[i]}
+        correctAnswer={correctAnswers[i]}
+        isQuizSubmitted={isQuizSubmitted}
       />
     );
   });
+
   return (
     <section>
       <form onSubmit={onSubmit}>
-        <div className="questions">{QuestionsElement}</div>
-        <input type="submit" value="Check answers" />
+        <div className={styles.questions}>{QuestionsElement}</div>
+        {!isQuizSubmitted ? (
+          <input type="submit" value="Check answers" />
+        ) : (
+          <div className={styles.results}>
+            <span>You scored {numberCorrect}/5 correct answers</span>
+            <button className={styles.button} type="button" onClick={newQuiz}>
+              Play again
+            </button>
+          </div>
+        )}
       </form>
     </section>
   );
