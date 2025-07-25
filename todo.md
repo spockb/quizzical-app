@@ -1,7 +1,3 @@
-clicking start quiz hides the start screen
-clicking start quiz fetches data and shows the quiz
-fetch quiz data from api
-Store quizdata in state
 Gather FormData
 store chosen answers in state or const
 compare chosen answers to correct answers to see if right or wrong

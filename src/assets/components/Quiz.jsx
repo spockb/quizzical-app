@@ -1,9 +1,10 @@
 import QuestionCard from "./QuestionCard";
 import { insertRandomly } from "../utils";
 import { decode } from "html-entities";
+import styles from "./Quiz.module.css";
 
-export default function Quiz({ response }) {
-  const QuestionsElement = response?.results?.map((item, index) => {
+export default function Quiz({ quizData, onSubmit }) {
+  const QuestionsElement = quizData?.results?.map((item, index) => {
     const allAnswers = insertRandomly(
       item.incorrect_answers,
       item.correct_answer
@@ -19,12 +20,10 @@ export default function Quiz({ response }) {
   });
   return (
     <section>
-      <div className="container">
-        <form className="quiz">
-          <div className="questions">{QuestionsElement}</div>
-          <input type="submit" value="Check answers" />
-        </form>
-      </div>
+      <form onSubmit={onSubmit}>
+        <div className="questions">{QuestionsElement}</div>
+        <input type="submit" value="Check answers" />
+      </form>
     </section>
   );
 }

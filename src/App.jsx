@@ -1,6 +1,5 @@
 import { useState } from "react";
 import StartQuiz from "./assets/components/StartQuiz";
-import response from "./assets/response.js";
 import Quiz from "./assets/components/Quiz.jsx";
 
 // https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple
@@ -16,10 +15,19 @@ function App() {
     setQuizData(data);
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const entries = Object.fromEntries(formData.entries());
+    console.log(entries);
+  }
+
   return (
     <>
-      {!quizData ? <StartQuiz onClick={newQuiz} /> : null}
-      {quizData ? <Quiz response={quizData} /> : null}
+      <div className="container">
+        {!quizData ? <StartQuiz onClick={newQuiz} /> : null}
+        {quizData ? <Quiz quizData={quizData} onSubmit={handleSubmit} /> : null}
+      </div>
     </>
   );
 }
