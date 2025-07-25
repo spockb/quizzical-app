@@ -1,3 +1,4 @@
+/* DESKTOP VERSION (default) */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,4 +15,23 @@ body {
 
 div.container {
   max-width: 600px;
+}
+
+/* TABLET/MOBILE (768px and below) */
+@media (max-width: 768px) {
+  body {
+    padding: 0 1rem; /* Only left/right padding */
+  }
+
+  div.container {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* SMALL MOBILE (480px and below) */
+@media (max-width: 480px) {
+  body {
+    padding: 0 0.5rem; /* Only left/right padding */
+  }
 }
