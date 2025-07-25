@@ -10,14 +10,19 @@ export default function QuestionCard({
   isQuizSubmitted,
 }) {
   const questionElements = answers.map((answer) => {
-    const statusClass = isQuizSubmitted
-      ? clsx({
-          [styles.correct]: answer === correctAnswer,
-          [styles.incorrect]:
-            answer === selectedAnswer && selectedAnswer !== correctAnswer,
-          [styles.disabled]: isQuizSubmitted,
-        })
-      : "";
+    const statusClass = clsx({
+      [styles.correct]: isQuizSubmitted && answer === correctAnswer,
+      [styles.incorrect]:
+        isQuizSubmitted &&
+        answer === selectedAnswer &&
+        selectedAnswer !== correctAnswer,
+      [styles.disabled]:
+        isQuizSubmitted &&
+        answer !== selectedAnswer &&
+        answer !== correctAnswer,
+
+      [styles.submitted]: isQuizSubmitted,
+    });
 
     return (
       <div key={answer}>
