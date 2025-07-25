@@ -15,6 +15,7 @@ const QuestionsElement = response?.results?.map((item, index) => {
   return (
     <QuestionCard
       key={index}
+      index={index}
       question={decode(item.question)}
       answers={allAnswers}
     />

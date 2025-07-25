@@ -4,9 +4,9 @@ export default function StartQuiz() {
     <>
       <section>
         <div>
-          <h1>Quizzical</h1>
-          <p>The best quiz app</p>
-          <button>Start Quiz!</button>
+          <h1>Trivia Time!</h1>
+          <p>The best trivia app</p>
+          <button>Start Trivia!</button>
         </div>
       </section>
     </>
