@@ -1,3 +1,5 @@
+clicking start quiz hides the start screen
+clicking start quiz fetches data and shows the quiz
 fetch quiz data from api
 Store quizdata in state
 Gather FormData

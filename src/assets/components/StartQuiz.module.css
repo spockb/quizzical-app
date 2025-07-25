@@ -32,4 +32,9 @@ button {
   border-radius: 1rem;
   padding: 1rem 3rem;
   font-weight: 500;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #344f89;
 }
