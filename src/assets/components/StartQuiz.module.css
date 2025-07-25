@@ -1,0 +1,35 @@
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-family: Karla, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+button {
+  background-color: #4d5b9e;
+  color: #f5f7fb;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem 3rem;
+  font-weight: 500;
+}
