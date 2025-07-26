@@ -31,7 +31,7 @@ export default function Quiz({
   return (
     <section className={styles.quizSection}>
       <form className={styles.form} onSubmit={onSubmit}>
-        <div className={styles.questions}>{QuestionsElement}</div>
+        {QuestionsElement}
         {!isQuizSubmitted ? (
           <input type="submit" value="Check answers" />
         ) : (

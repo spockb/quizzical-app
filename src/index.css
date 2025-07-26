@@ -17,3 +17,9 @@ div.container {
   margin: 0 auto;
   padding: 2rem 0;
 }
+
+@media only screen and (max-width: 600px) {
+  div.container {
+    padding: 1rem;
+  }
+}
