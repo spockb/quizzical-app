@@ -29,8 +29,8 @@ export default function Quiz({
   });
 
   return (
-    <section>
-      <form onSubmit={onSubmit}>
+    <section className={styles.quizSection}>
+      <form className={styles.form} onSubmit={onSubmit}>
         <div className={styles.questions}>{QuestionsElement}</div>
         {!isQuizSubmitted ? (
           <input type="submit" value="Check answers" />

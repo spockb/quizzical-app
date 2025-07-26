@@ -42,8 +42,8 @@ export default function QuestionCard({
   return (
     <>
       <fieldset>
-        <legend>{question}</legend>
-        {questionElements}
+        <h2>{question}</h2>
+        <div className={styles.answers}>{questionElements}</div>
       </fieldset>
     </>
   );

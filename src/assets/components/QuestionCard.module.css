@@ -1,21 +1,29 @@
-/* DESKTOP VERSION (default) */
 fieldset {
   border: none;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   justify-content: start;
   gap: 1rem;
   padding-block: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #dbdef0;
   width: 100%;
+  margin-top: 0;
 }
 
-legend {
+h2 {
   font-family: Karla, sans-serif;
   font-size: 1rem;
   font-weight: 700;
-  margin-block: 0.75rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.answers {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 label:not(.submitted) {
@@ -32,6 +40,7 @@ input[type="radio"] {
   opacity: 0;
   position: fixed;
   width: 0;
+  display: hidden;
 }
 
 input[type="radio"]:hover + label:not(.submitted),
@@ -75,73 +84,4 @@ input[type="radio"]:checked + label:not(.submitted) {
   background-color: #94d7a2;
   border: 1px solid #94d7a2;
   cursor: default;
-}
-
-/* MOBILE VERSION (768px and below) */
-@media (max-width: 768px) {
-  fieldset {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5rem;
-  }
-
-  legend {
-    margin-bottom: 1rem;
-    line-height: 1.4;
-  }
-
-  label:not(.submitted) {
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    min-height: 44px;
-  }
-
-  .disabled {
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    min-height: 44px;
-  }
-
-  .incorrect {
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    min-height: 44px;
-  }
-
-  .correct {
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    min-height: 44px;
-  }
-}
-
-/* SMALL MOBILE (480px and below) */
-@media (max-width: 480px) {
-  legend {
-    font-size: 0.95rem;
-  }
-
-  label:not(.submitted),
-  .disabled,
-  .incorrect,
-  .correct {
-    padding: 0.875rem 0.75rem;
-    font-size: 0.95rem;
-  }
 }

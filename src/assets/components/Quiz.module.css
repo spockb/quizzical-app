@@ -1,16 +1,26 @@
-/* DESKTOP VERSION (default) */
-form {
+.quizSection {
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 1rem 0;
 }
 
 .questions {
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
 }
 
 input[type="submit"] {
@@ -50,50 +60,4 @@ button {
 
 button:hover {
   background-color: #344f89;
-}
-
-/* TABLET/MOBILE (768px and below) */
-@media (max-width: 768px) {
-  form {
-    padding-top: 1rem; /* Add top spacing for mobile */
-    width: 100%;
-  }
-
-  .questions {
-    width: 100%;
-  }
-
-  input[type="submit"] {
-    min-width: 120px;
-  }
-
-  .results {
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    text-align: center;
-  }
-
-  button {
-    padding: 0.75rem 2rem;
-    min-width: 120px;
-  }
-}
-
-/* SMALL MOBILE (480px and below) */
-@media (max-width: 480px) {
-  form {
-    padding-top: 0.5rem;
-  }
-
-  .results {
-    gap: 1rem;
-    flex-direction: column;
-  }
-
-  button {
-    padding: 0.75rem 1.5rem;
-    width: 100%;
-    max-width: 200px;
-  }
 }
